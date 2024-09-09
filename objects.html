@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object</title>
+</head>
+<body>
+    <script>
+
+        //object and nested object
+        let person = {
+         name: "praveen",
+           details: {
+              age: "22",
+                date_of_birth: "14.06.2001",
+                fun:function(){
+                  if(this.age>18){
+                    console.log("eligible for votr")
+                  }else console.log("not eligible");
+                }
+  }
+};
+
+console.log(person.details.age); 
+person.details.fun();
+
+//json
+let jsonString = JSON.stringify(person);
+console.log("JSON String:", jsonString);
+
+let parsedObject = JSON.parse(jsonString);
+console.log("Parsed Object:", parsedObject);
+
+      const oneLine=(a)=>a*20;
+     console.log( oneLine(3));
+
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encapsulation</title>
+</head>
+<body>
+    <script>
+        function details(name) {
+
+                let age = 22;
+
+                return {
+                    getName: function () {
+                        return name;
+                    },
+
+                    getAge: function () {
+                        return age;
+                    },
+                    setAge: function (newAge) {
+                        if (newAge > 0) {
+                            age = newAge;
+                        }else console.log ('enter valid age');
+                    }
+                }
+
+            }
+            const person = details('Praveen');
+            console.log(person.getName());
+            console.log(person.getAge());
+
+            person.setAge(-3);
+            console.log(person.getAge());
+            console.log(person.age);
+
+            const person1 = details('kumar');
+            console.log(person1.getName());
+            console.log(person1.getAge());
+
+    </script>
+    
+</body>
+</html>
