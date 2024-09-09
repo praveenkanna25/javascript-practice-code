@@ -38,6 +38,17 @@
             localStorage.removeItem('name');
             document.getElementById('nameDisplay').innerText = 'Name cleared.';
         }
+
+
+         //settimeot and timeinterval
+            setTimeout(() => {
+            console.log('This message is logged after 5 seconds');
+        }, 5000);
+
+        setInterval(() => {
+            console.log('This message is logged every 5 seconds');
+        }, 5000);
+
     </script>
 </body>
 </html>
