@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <input type="Number" id="thirukuralNumber" placeholder="Enter thirukural Number">
+    <button onclick="fetchData()">Submit</button><br>
+
+    <p class="first-line" style="display: none;"></p><br/>
+    <p class="secound-line" style="display: none;"></p>
+    
+    <!-- <img src="" alt="Pokemon Sprite" id="pokemonSprite" style="display: none">
+     -->
+
+    <script>
+        async function fetchData(){
+        
+            try{
+        
+                const thirukuralNum = document.getElementById("thirukuralNumber").value;
+                const response = await fetch(`https://api-thirukkural.vercel.app/api?num=${thirukuralNum}`);
+        
+                if(!response.ok){
+                    throw new Error("Could not fetch resource");
+                }
+        
+                const data = await response.json();
+                console.log(data);
+                const firstLine = document.querySelector(".first-line");
+                 firstLine.innerHTML(
+
+                 )
+                
+               const secoundLine = document.querySelector(".secound-line");
+                 firstLine.innerHTML(
+                    
+                 )
+                const imgElement = document.getElementById("pokemonSprite");
+        
+                imgElement.src = pokemonSprite;
+                imgElement.style.display = "block";
+            }
+            catch(error){
+                console.error(error);
+            }
+        }
+       
+            // Fetch promisses
+            // fetch('test.json')
+            // .then(response => response.json())
+            // .then(data => console.log(data[0].name,data[0].date))
+            // .catch(error=>console.log(error));
+
+
+            async function fetchData(date) {
+  try {
+    const response = await fetch(`http://192.168.11.153:8082/data-server/data-2024-08-22.json`);
+    if (!response.ok) {
+      throw new Error(`HTTP error! Status: ${response.status}`);
+    }
+    const data = await response.json();
+    console.log(data);
+  } catch (error) {
+    console.error('Error fetching data:', error);
+  }
+}
+fetchData('2024-08-22');
+
+
+            // async await example
+        
+//   fetchData();
+//             async function fetchData(){
+//                 try{
+//                 const response = await fetch('test.json');
+//                 if (!response.ok){
+//                     throw new Error("can't find file")
+//                 }
+//                 const data= await response.json();
+//                 console.log(data);
+//                 } catch(error){
+//                     console.log(error);
+//                 }
+//             }
+        
+        </script>
+   
+</body>
+</html>
+
